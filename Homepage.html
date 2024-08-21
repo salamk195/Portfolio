@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <style>
+      body {
+        background-color: black;
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      h1 {
+        color: white;
+        margin: 0;
+        font-size: calc(1.2rem + 1vw);
+        max-width: 40%;
+      }
+
+      .Intro {
+        flex: 1;
+        margin-right: 20px;
+        text-align: left;
+      }
+
+      .navbar {
+        width: 100%;
+        background-color: grey;
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+      }
+
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 15px;
+        font-size: 1rem;
+        margin: 0 10px;
+        transition: background-color 0.3s ease;
+      }
+
+      .navbar a:hover {
+        background-color: brown;
+        border-radius: 10px;
+      }
+
+      .logo {
+        margin-left: 20px;
+        height: 40px;
+      }
+
+      .navbar-links {
+        display: flex;
+        align-items: center;
+      }
+
+      .intdiv {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10%;
+        text-align: center;
+        padding: 0 20px;
+        flex-wrap: wrap;
+      }
+
+      .myimage {
+        height: auto;
+        width: 60%;
+        max-width: 400px;
+        border-radius: 50%;
+      }
+
+      .belowlinks {
+        text-align: center;
+        margin-top: 5%;
+      }
+
+      .belowlinks a {
+        display: inline-block;
+        color: white;
+        text-decoration: none;
+        font-size: 1rem;
+        background-color: rgb(15, 135, 151);
+        border: solid white 1px;
+        border-radius: 10px;
+        padding: 10px 20px;
+        margin: 10px;
+      }
+
+      .belowlinks a:hover {
+        background-color: brown;
+      }
+
+      .Resume {
+        width: auto;
+        height: auto;
+      }
+
+      .projects {
+        width: auto;
+        height: auto;
+      }
+
+      @media (max-width: 768px) {
+        .navbar a {
+          font-size: 0.9rem;
+          padding: 8px 12px;
+        }
+
+        .logo {
+          height: 30px;
+          margin-left: 10px;
+        }
+
+        .myimage {
+          width: 70%;
+          max-width: 300px;
+        }
+
+        .Intro {
+          margin-right: 10px;
+          font-size: 1.1rem;
+          max-width: 60%;
+        }
+
+        .intdiv {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .belowlinks a {
+          font-size: 0.9rem;
+          padding: 8px 16px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .navbar {
+          padding: 5px 0;
+        }
+
+        .navbar a {
+          font-size: 0.8rem;
+          padding: 6px 10px;
+        }
+
+        .logo {
+          height: 50px;
+          margin-left: 5px;
+        }
+
+        .myimage {
+          width: 80%;
+          max-width: 250px;
+        }
+
+        .Intro {
+          margin-right: 5px;
+          font-size: 1rem;
+          max-width: 80%;
+        }
+
+        .intdiv {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .belowlinks a {
+          font-size: 0.8rem;
+          padding: 6px 14px;
+        }
+      }
+      footer {
+        background: #000000;
+        color: #fff;
+        text-align: center;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <img class="logo" src="images/0Fb4NI-LogoMakr.png" alt="icon" />
+      <div class="navbar-links">
+        <a href="Homepage.html">Home</a>
+        <a href="Contact.html">Contact Me</a>
+        <a href="projects.html">My projects</a>
+      </div>
+    </div>
+    <div class="intdiv">
+      <h1 class="Intro">
+        Hi there my name is Abdulsalam Awosanya, I'm a web designer and
+        developer, I'm also into graphics designing.
+      </h1>
+      <img
+        class="myimage"
+        src="images/Untitled_design-removebg-preview.png"
+        alt="myimage"
+      />
+    </div>
+    <div class="belowlinks">
+      <a class="Resume" href="#">View my Resume</a>
+    </div>
+    <div class="belowlinks">
+      <a class="projects" href="#">My projects</a>
+    </div>
+    <footer>
+      <p>&copy; 2024 SalamK. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
