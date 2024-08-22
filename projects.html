@@ -13,45 +13,45 @@
       }
       .navbar {
         display: flex;
-        justify-content: space-between; /* Aligns items with space between */
-        align-items: center; /* Centers items vertically */
+        justify-content: space-between;
+        align-items: center;
         background-color: gray;
-        padding: 10px 20px; /* Adjusted for better spacing */
+        padding: 10px 20px;
         color: white;
       }
       .navbar img {
-        max-height: 40px; /* Smaller size for logo */
+        max-height: 40px;
       }
       .navbar ul {
         list-style: none;
         margin: 0;
         padding: 0;
         display: flex;
-        gap: 20px; /* Spacing between links */
+        gap: 20px;
       }
       .navbar ul li {
-        margin: 0; /* Remove margin-left */
+        margin: 0;
       }
       .navbar ul li a {
         color: white;
         text-decoration: none;
         font-size: 18px;
-        padding: 10px; /* Padding for better spacing */
+        padding: 10px;
       }
       .navbar ul li a:hover {
-        background-color: brown; /* Background color on hover */
+        background-color: brown;
         border-radius: 10px;
       }
       .gallery {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 10px; /* Adjusted gap for better spacing */
-        margin: 20px auto; /* Center gallery with margin */
-        padding: 0 10px; /* Padding for responsive design */
+        gap: 10px;
+        margin: 20px auto;
+        padding: 0 10px;
       }
       .gallery-item {
         overflow: hidden;
-        border-radius: 8px; /* Rounded corners for gallery items */
+        border-radius: 8px;
       }
       .gallery-img {
         width: 100%;
@@ -112,7 +112,7 @@
         .navbar ul {
           flex-direction: column;
           align-items: center;
-          gap: 10px; /* Adjusted spacing for smaller screens */
+          gap: 10px;
         }
         .gallery {
           grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -121,7 +121,7 @@
 
       @media (max-width: 480px) {
         .navbar ul {
-          gap: 5px; /* Adjusted spacing for very small screens */
+          gap: 5px;
         }
         .gallery {
           grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -137,7 +137,7 @@
         position: fixed;
         width: 100%;
         bottom: 0;
-        padding: 10px; /* Padding for footer */
+        padding: 10px;
       }
     </style>
 </head>
