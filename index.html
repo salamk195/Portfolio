@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        .navbar {
+            width: 100%;
+            background-color: grey;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .navbar a:hover {
+            background-color: brown;
+            border-radius: 10px;
+        }
+        .logo {
+            height: 40px;
+        }
+        .navbar-links {
+            display: flex;
+            align-items: center;
+        }
+        .section {
+            padding: 20px;
+            margin-top: 70px;
+            text-align: center;
+        }
+        .myimage {
+            width: 80%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 50%;
+            margin-top: 20px;
+        }
+        .belowlinks a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            background-color: rgb(15, 135, 151);
+            border: solid white 1px;
+            border-radius: 10px;
+            padding: 10px 20px;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .belowlinks a:hover {
+            background-color: brown;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin: 20px auto;
+            padding: 0 10px;
+        }
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        .gallery-img {
+            width: 100%;
+            height: auto;
+            max-height: 120px;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .gallery-img:hover {
+            opacity: 0.8;
+            transform: scale(1.05);
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #000000;
+            padding: 20px;
+            border-radius: 18px;
+            border: solid 3px white;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 3px solid blue;
+            border-radius: 14px;
+            box-sizing: border-box;
+        }
+        .contact-form button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .contact-form button:hover {
+            background-color: #555;
+        }
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+            transition: opacity 0.3s ease;
+        }
+        .social-icons img:hover {
+            opacity: 0.7;
+        }
+        footer {
+            background: #000000;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+        @media (max-width: 480px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            }
+            .gallery-img {
+                max-height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <img class="logo" src="0Fb4NI-LogoMakr.png" alt="icon" />
+        <div class="navbar-links">
+            <a href="#home">Home</a>
+            <a href="#projects">My Projects</a>
+            <a href="#contact">Contact Me</a>
+        </div>
+    </div>
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <h1>Hi there, my name is Abdulsalam Awosanya. I'm a web designer, developer, and graphics designer.</h1>
+        <img class="myimage" src="Untitled_design-removebg-preview.png" alt="myimage" />
+        <div class="belowlinks">
+            <a href="resume.html">View my Resume</a>
+            <a href="#projects">My Projects</a>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h1>My Projects</h1>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="1.png" alt="Image 1" class="gallery-img" />
+            </div>
+            <div class="gallery-item">
+                <img src="SDG-pictures.png" alt="Image 2" class="gallery-img" />
+            </div>
+            <div class="gallery-item">
+                <img src="download-2.png" alt="Image 3" class="gallery-img" />
+            </div>
+            <div class="gallery-item">
+                <img src="Buy-your-snax.png" alt="Image 4" class="gallery-img" />
+            </div>
+            <!-- Add more gallery items as needed -->
+        </div>
+        <p>I also have other completed projects, such as websites and the "Life on Land" project (SDG). In the near future, I plan to create a free educational platform for people of all ages across the globe.</p>
+    </section>
+
+    <!-- Contact Me Section -->
+    <section id="contact" class="section">
+        <h1>Contact Me</h1>
+        <div class="contact-form">
+            <form action="mailto:abdulsalamawosanya5@gmail.com" method="get" enctype="text/plain">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required />
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/yourprofile" target="_blank">
+                <img src="logos--facebook.svg" alt="Facebook" />
+            </a>
+            <a href="https://twitter.com/yourprofile" target="_blank">
+                <img src="x-social-media-logo-icon.svg" alt="Twitter" />
+            </a>
+            <a href="https://www.whatsapp.com/yourprofile" target="_blank">
+                <img src="logos--whatsapp-icon.svg" alt="Whatsapp" />
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 SalamK. All rights reserved.</p>
+    </footer>
+
+    <!-- Optional: Add script for modal gallery functionality if needed -->
+</body>
+</html>
