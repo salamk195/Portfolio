@@ -13,6 +13,13 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
     />
+    <link
+      class="icon"
+      rel="icon"
+      href="0Fb4NI-LogoMakr.png"
+      type="icon"
+      sizes="5x5"
+    />
     <style>
       * {
         margin: 0;
@@ -46,7 +53,7 @@
 
       .navbar img.logo {
         display: block;
-        width: 150px; 
+        width: 150px;
         height: auto;
       }
 
@@ -116,6 +123,7 @@
         background-color: #e67e22;
       }
 
+      /* Services Section */
       #services {
         padding: 4rem 2rem;
         background-color: #fff;
@@ -153,6 +161,7 @@
         color: #555;
       }
 
+      /* Projects Section */
       #projects {
         padding: 4rem 2rem;
         background-color: #f4f4f4;
@@ -181,7 +190,19 @@
       .gallery-item img:hover {
         transform: scale(1.05);
       }
-
+      .download-button {
+        display: inline-block;
+        padding: 10px 20px;
+        color: #fff;
+        background-color: #e67e22;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+      .download-button:hover {
+        background-color: #0056b3;
+      }
       #contact {
         padding: 4rem 2rem;
         background-color: #222;
@@ -225,6 +246,7 @@
         background-color: #e67e22;
       }
 
+      /* Footer */
       footer {
         padding: 1.5rem;
         text-align: center;
@@ -285,7 +307,7 @@
     </header>
 
     <main>
-     
+      <!-- Hero Section -->
       <section id="home">
         <img
           class="myimage"
@@ -294,12 +316,19 @@
         />
         <h1>Hi, I'm Abdulsalam Awosanya</h1>
         <p>
-          I'm a full-stack Front-end web designer, developer, and graphics designer passionate about
-          creating beautiful, functional, and user-friendly designs.
+          I'm a full-stack Front-end web designer, developer, and graphics
+          designer passionate about creating beautiful, functional, and
+          user-friendly designs.
         </p>
-        <a href="resume.html" class="btn">View My Resume</a>
+        <a
+          href="Abdulsalam-Awosanya.pdf"
+          download="Abdulsalam-Awosanya.pdf"
+          class="download-button"
+          >Download CV</a
+        >
         <a href="#projects" class="btn">See My Projects</a>
       </section>
+
       <section id="services">
         <h2>My Services</h2>
         <div class="cards">
@@ -326,6 +355,7 @@
         </div>
       </section>
 
+      <!-- Projects Section -->
       <section id="projects">
         <h2>My Projects</h2>
         <div class="gallery">
@@ -340,14 +370,18 @@
             <img src="Buy-your-snax.png" alt="Project 4" />
           </div>
           <div class="gallery-item">
-            <img src="WhatsApp-Image-2024-07-25-at-6.42.33-PM-1.jpeg" alt="Project 5">
+            <img
+              src="WhatsApp-Image-2024-07-25-at-6.42.33-PM-1.jpeg"
+              alt="Project 5"
+            />
           </div>
           <div class="gallery-item">
-            <img src="8ji0pe5j-292x300.png" alt="Project 6">
+            <img src="8ji0pe5j-292x300.png" alt="Project 6" />
           </div>
         </div>
       </section>
 
+      <!-- Contact Section -->
       <section id="contact">
         <h2>Contact Me</h2>
         <form class="contact-form">
