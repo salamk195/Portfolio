@@ -8,365 +8,364 @@
       content="Professional portfolio for Abdulsalam Awosanya, a web designer, developer, and graphics designer."
     />
     <title>Abdulsalam Awosanya | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+    />
     <style>
-      body {
-        background-color: #121212;
+      * {
         margin: 0;
-        font-family: "Arial", sans-serif;
-        color: #ffffff;
-        line-height: 1.6;
-        overflow-x: hidden;
-        
+        padding: 0;
+        box-sizing: border-box;
+        overflow-x: auto;
       }
 
-      /* Navbar */
+      body {
+        font-family: "Roboto", sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f9f9f9;
+        overflow-x: hidden;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
       .navbar {
-        width: 100%;
-        background-color: #333;
-        padding: 10px 20px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 1000;
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        transition: height 0.3s ease;
-      }
-      .navbar-links {
-        display: flex;
-      }
-      .navbar a {
+        padding: 1rem 2rem;
+        background-color: #222;
         color: #fff;
-        text-decoration: none;
-        padding: 10px 15px;
-        font-size: 1rem;
-        transition: background-color 0.3s ease;
-      }
-      .navbar a:hover {
-        background-color: #444;
-        border-radius: 8px;
-      }
-      .logo {
-        height: 40px;
+        width: 100%;
+        z-index: 1000;
       }
 
-      /* Hamburger Menu */
+      .navbar img.logo {
+        display: block;
+        width: 150px; 
+        height: auto;
+      }
+
+      .navbar-links {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      .navbar-links a {
+        color: #fff;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .navbar-links a:hover {
+        color: #f39c12;
+      }
+
       .hamburger {
         display: none;
-        flex-direction: column;
         cursor: pointer;
-        margin-left: auto; /* Move to the right */
       }
-      .hamburger div {
-        width: 25px;
+
+      .hamburger span {
+        display: block;
+        background: #fff;
         height: 3px;
-        background-color: #fff;
-        margin: 4px;
+        width: 25px;
+        margin: 5px 0;
       }
 
-      /* Sections */
-      section {
-        padding: 60px 20px;
-        margin-top: 60px;
-        text-align: center;
-      }
-      h1 {
-        font-size: 2rem;
-        margin-bottom: 20px;
-        color: #00bfff;
-      }
-      p {
-        font-size: 1.1rem;
-        color: #ccc;
-      }
-
-      /* Home Section */
       #home {
-        background-color: #222;
-        padding-bottom: 60px;
+        text-align: center;
+        padding: 8rem 2rem 4rem;
+        background: black;
+        color: #fff;
       }
 
       .myimage {
-        width: 180px;
+        max-width: 200px;
         border-radius: 50%;
-        margin-top: 20px;
-      }
-      .belowlinks {
-        display: flex;
-        justify-content: center;
-        background-color: transparent;
-        margin: 0;
-        padding: 0;
+        margin-bottom: 1.5rem;
       }
 
-      .belowlinks a {
+      #home h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      #home p {
+        margin-bottom: 1.5rem;
+      }
+
+      .btn {
         display: inline-block;
-        background-color: #0f8797;
+        margin: 0.5rem;
+        padding: 0.8rem 1.5rem;
+        background-color: #f39c12;
         color: #fff;
-        border: 2px solid #fff;
-        border-radius: 12px;
-        padding: 10px 20px;
-        margin: 10px;
-        transition: background-color 0.3s ease;
-      }
-      .belowlinks a:hover {
-        background-color: #00bfff;
+        border: none;
+        border-radius: 5px;
+        transition: background 0.3s ease;
       }
 
-      /* Projects Section */
+      .btn:hover {
+        background-color: #e67e22;
+      }
+
+      #services {
+        padding: 4rem 2rem;
+        background-color: #fff;
+        text-align: center;
+      }
+
+      #services h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .cards {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .card {
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+        border-radius: 10px;
+        max-width: 300px;
+        text-align: center;
+      }
+
+      .card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+      }
+
+      .card p {
+        font-size: 0.95rem;
+        color: #555;
+      }
+
+      #projects {
+        padding: 4rem 2rem;
+        background-color: #f4f4f4;
+        text-align: center;
+      }
+
+      #projects h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+
       .gallery {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 15px;
-        max-width: 1000px;
-        margin: 0 auto;
-      }
-      .gallery-item {
-        overflow: hidden;
-        border-radius: 10px;
-      }
-      .gallery-img {
-        width: 100%;
-        height: 150px;
-        object-fit: cover;
-        transition: transform 0.3s ease, opacity 0.3s ease;
-      }
-      .gallery-img:hover {
-        transform: scale(1.05);
-        opacity: 0.9;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1.5rem;
       }
 
-      /* Contact Section */
-      .contact-form {
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 50px;
-        background: #333;
-        border-radius: 12px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      .gallery-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
       }
+
+      .gallery-item img:hover {
+        transform: scale(1.05);
+      }
+
+      #contact {
+        padding: 4rem 2rem;
+        background-color: #222;
+        color: #fff;
+        text-align: center;
+      }
+
+      #contact h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .contact-form {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
       .contact-form input,
       .contact-form textarea {
         width: 100%;
-        padding: 12px;
-        margin-bottom: 15px;
-        border: 1px solid #444;
-        border-radius: 8px;
-        background-color: #222;
-        color: #fff;
-      }
-      .contact-form button {
-        background-color: #00bfff;
-        color: #fff;
-        padding: 10px 20px;
+        padding: 0.8rem;
+        margin-bottom: 1rem;
         border: none;
-        border-radius: 8px;
+        border-radius: 5px;
+        font-size: 1rem;
+      }
+
+      .contact-form button {
+        width: 100%;
+        padding: 0.8rem;
+        background-color: #f39c12;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
         cursor: pointer;
-        transition: background-color 0.3s ease;
+        transition: background 0.3s ease;
       }
+
       .contact-form button:hover {
-        background-color: #009acd;
+        background-color: #e67e22;
       }
 
-      /* Social Icons */
-      .social-icons img {
-        width: 40px;
-        margin: 10px;
-        transition: opacity 0.3s ease;
-      }
-      .social-icons img:hover {
-        opacity: 0.8;
-      }
-
-      /* Footer */
       footer {
-        background-color: #222;
-        padding: 15px 0;
+        padding: 1.5rem;
         text-align: center;
-        color: #bbb;
+        background-color: #222;
+        color: #fff;
       }
 
-      /* Responsive */
+      footer p {
+        font-size: 0.9rem;
+      }
+
       @media (max-width: 768px) {
         .navbar-links {
           display: none;
           flex-direction: column;
-          width: 100%;
-          background-color: #333;
-          margin-top: 10px;
+          gap: 1rem;
+          position: absolute;
+          top: 60px;
+          right: 0;
+          background-color: #222;
+          padding: 1rem 2rem;
+          border-radius: 5px;
         }
+
         .navbar-links.active {
           display: flex;
         }
+
         .hamburger {
-          display: flex;
+          display: block;
         }
-        .navbar {
+
+        .cards {
           flex-direction: column;
-          align-items: flex-start;
-          height: auto;
+          gap: 1rem;
         }
-      }
-
-      /* Ensure sections are scrolled properly and not hidden behind the fixed navbar */
-      section {
-        scroll-margin-top: 70px;
-      }
-
-      /* Services Section */
-      #Services {
-        background-color: white;
-        padding: 60px 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-      }
-      #Services h1 {
-        color: #121212;
-      }
-
-      .cards {
-        background-color: #333;
-        color: #fff;
-        padding: 20px;
-        margin: 20px;
-        border-radius: 10px;
-        width: 80%;
-        max-width: 400px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-      }
-
-      .cards h2 {
-        color: #00bfff;
-        margin-bottom: 10px;
-      }
-
-      .cards p {
-        color: #ccc;
-        font-size: 1.1rem;
-      }
-      .service-image {
-        width: 100px;
-        margin-bottom: 15px;
-        border-radius: 8px;
       }
     </style>
   </head>
   <body>
-    <!-- Navbar -->
-    <div class="navbar">
-      <img class="logo" src="0Fb4NI-LogoMakr.png" alt="Portfolio Logo" />
-      <div class="navbar-links">
-        <a href="#home">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="hamburger" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
+    <header>
+      <nav class="navbar">
+        <a href="#home"
+          ><img class="logo" src="0Fb4NI-LogoMakr.png" alt="Portfolio Logo"
+        /></a>
+        <ul class="navbar-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
 
-    <!-- Home Section -->
-    <section id="home">
-      <img
-        class="myimage"
-        src="Untitled_design-removebg-preview.png"
-        alt="Abdulsalam Awosanya Profile Picture"
-      />
-      <h1>Hi, I'm Abdulsalam Awosanya</h1>
-      <p>
-        I'm a web designer, developer, and graphics designer passionate about
-        creating beautiful, functional, and user-friendly designs.
-      </p>
-      <div class="belowlinks">
-        <a href="resume.html">View My Resume</a>
-        <a href="#projects">See My Projects</a>
-      </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="Services">
-      <h1>My Services</h1>
-
-      <div class="cards">
-        <h2>Web Design</h2>
+    <main>
+     
+      <section id="home">
+        <img
+          class="myimage"
+          src="Untitled_design-removebg-preview.png"
+          alt="Profile Picture"
+        />
+        <h1>Hi, I'm Abdulsalam Awosanya</h1>
         <p>
-          I create modern, responsive web designs to give your business the best
-          online presence.
+          I'm a full-stack Front-end web designer, developer, and graphics designer passionate about
+          creating beautiful, functional, and user-friendly designs.
         </p>
-      </div>
-      <div class="cards">
-        <h2>Web Development</h2>
-        <p>
-          Developing high-performance websites and web applications using the
-          latest technologies.
-        </p>
-      </div>
-      <div class="cards">
-        <h2>Graphics Design</h2>
-        <p>
-          Designing visually appealing graphics that effectively communicate
-          your brand's message.
-        </p>
-      </div>
-    </section>
+        <a href="resume.html" class="btn">View My Resume</a>
+        <a href="#projects" class="btn">See My Projects</a>
+      </section>
+      <section id="services">
+        <h2>My Services</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Web Design</h3>
+            <p>
+              Creating modern, responsive web designs for a great online
+              presence.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Web Development</h3>
+            <p>
+              Developing high-performance websites using the latest
+              technologies.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Graphics Design</h3>
+            <p>
+              Designing visually appealing graphics to communicate your message.
+            </p>
+          </div>
+        </div>
+      </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-      <h1>My Projects</h1>
-      <div class="gallery">
-        <div class="gallery-item">
-          <img src="1.png" alt="Project Image 1" class="gallery-img" />
+      <section id="projects">
+        <h2>My Projects</h2>
+        <div class="gallery">
+          <div class="gallery-item"><img src="1.png" alt="Project 1" /></div>
+          <div class="gallery-item">
+            <img src="SDG-pictures.png" alt="Project 2" />
+          </div>
+          <div class="gallery-item">
+            <img src="download-2.png" alt="Project 3" />
+          </div>
+          <div class="gallery-item">
+            <img src="Buy-your-snax.png" alt="Project 4" />
+          </div>
+          <div class="gallery-item">
+            <img src="WhatsApp-Image-2024-07-25-at-6.42.33-PM-1.jpeg" alt="Project 5">
+          </div>
+          <div class="gallery-item">
+            <img src="8ji0pe5j-292x300.png" alt="Project 6">
+          </div>
         </div>
-        <div class="gallery-item">
-          <img
-            src="SDG-pictures.png"
-            alt="Project Image 2"
-            class="gallery-img"
-          />
-        </div>
-        <div class="gallery-item">
-          <img src="download-2.png" alt="Project Image 3" class="gallery-img" />
-        </div>
-        <div class="gallery-item">
-          <img
-            src="Buy-your-snax.png"
-            alt="Project Image 4"
-            class="gallery-img"
-          />
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-      <h1>Contact Me</h1>
-      <form class="contact-form">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea rows="5" placeholder="Your Message"></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
+      <section id="contact">
+        <h2>Contact Me</h2>
+        <form class="contact-form">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+    </main>
 
-    <!-- Footer -->
     <footer>
-      <p>&copy; 2024 Abdulsalam Awosanya. All rights reserved.</p>
+      <p>&copy; 2024 Abdulsalam Awosanya. All Rights Reserved.</p>
     </footer>
 
     <script>
       function toggleMenu() {
-        const navbarLinks = document.querySelector(".navbar-links");
-        navbarLinks.classList.toggle("active");
+        document.querySelector(".navbar-links").classList.toggle("active");
       }
     </script>
   </body>
