@@ -13,6 +13,70 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        
+        gsap.from("#home img", {
+          scale: 0,
+          opacity: 0,
+          duration: 1,
+          delay: 0.5,
+        });
+        gsap.from("#home h1", { x: -200, opacity: 0, duration: 1, delay: 1 });
+        gsap.from("#home p", { x: 200, opacity: 0, duration: 1, delay: 1.5 });
+        gsap.from("#home .btn", {
+          y: 50,
+          opacity: 0,
+          duration: 1,
+          delay: 2,
+          stagger: 0.2,
+        });
+
+        gsap.from(".card", {
+          y: 100,
+          opacity: 0,
+          duration: 1,
+          delay: 0.5,
+          stagger: 0.3,
+        });
+
+        gsap.from(".gallery-item", {
+          scale: 0.8,
+          opacity: 0,
+          duration: 1,
+          delay: 0.3,
+          stagger: 0.2,
+        });
+
+        gsap.from(".contact-form input, .contact-form textarea", {
+          y: 30,
+          opacity: 0,
+          duration: 1,
+          delay: 0.5,
+          stagger: 0.2,
+        });
+        gsap.from(".contact-form button", {
+          scale: 0.8,
+          opacity: 0,
+          duration: 1,
+          delay: 1.5,
+        });
+
+        gsap.utils.toArray("section").forEach((section) => {
+          gsap.from(section, {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            scrollTrigger: {
+              trigger: section,
+              start: "top 75%",
+            },
+          });
+        });
+      });
+    </script>
+
     <link
       class="icon"
       rel="icon"
@@ -62,6 +126,8 @@
         display: flex;
         gap: 1.5rem;
       }
+      .navbar-links {
+        z-index: 1001;}
 
       .navbar-links a {
         color: #fff;
@@ -160,7 +226,6 @@
         color: #555;
       }
 
-     
       #projects {
         padding: 4rem 2rem;
         background-color: #f4f4f4;
@@ -198,7 +263,7 @@
         border-radius: 5px;
         font-size: 16px;
         transition: background-color 0.3s;
-          margin-bottom: 2%;
+        margin-bottom: 2%;
       }
       .download-button:hover {
         background-color: #0056b3;
@@ -246,7 +311,6 @@
         background-color: #e67e22;
       }
 
-  
       footer {
         padding: 1.5rem;
         text-align: center;
@@ -307,7 +371,6 @@
     </header>
 
     <main>
-      
       <section id="home">
         <img
           class="myimage"
@@ -383,10 +446,13 @@
         </div>
       </section>
 
-      
       <section id="contact">
         <h2>Contact Me</h2>
-        <form action="mailto:abdulsalamawosanya5@gmail.com" method="get" class="contact-form">
+        <form
+          action="mailto:abdulsalamawosanya5@gmail.com"
+          method="get"
+          class="contact-form"
+        >
           <input type="text" placeholder="Your Name" required />
           <input type="email" placeholder="Your Email" required />
           <textarea placeholder="Your Message" required></textarea>
