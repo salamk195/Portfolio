@@ -16,7 +16,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        
         gsap.from("#home img", {
           scale: 0,
           opacity: 0,
@@ -116,7 +115,6 @@
       }
 
       .navbar img.logo {
-        display: block;
         width: 150px;
         height: auto;
       }
@@ -127,7 +125,8 @@
         gap: 1.5rem;
       }
       .navbar-links {
-        z-index: 1001;}
+        z-index: 1001;
+      }
 
       .navbar-links a {
         color: #fff;
@@ -162,7 +161,6 @@
       .myimage {
         max-width: 200px;
         border-radius: 50%;
-        margin-bottom: 1.5rem;
       }
 
       #home h1 {
@@ -175,8 +173,8 @@
       }
 
       .btn {
+        margin-top: 2vh;
         display: inline-block;
-        margin: 0.5rem;
         padding: 0.8rem 1.5rem;
         background-color: #f39c12;
         color: #fff;
@@ -239,7 +237,7 @@
 
       .gallery {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         gap: 1.5rem;
       }
 
@@ -263,11 +261,16 @@
         border-radius: 5px;
         font-size: 16px;
         transition: background-color 0.3s;
-        margin-bottom: 2%;
+        margin-top: 1%;
       }
-      .download-button:hover {
+      .download-button:active {
         background-color: #0056b3;
       }
+
+      .download-button.btn:hover {
+        background-color: green;
+      }
+
       #contact {
         padding: 4rem 2rem;
         background-color: #222;
@@ -321,8 +324,36 @@
       footer p {
         font-size: 0.9rem;
       }
+      .lightbox {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: none;
+        justify-content: center;
+        align-items: center;
+      }
 
-      @media (max-width: 768px) {
+      .lightbox img {
+        max-width: 90%;
+        max-height: 90%;
+      }
+
+      .close-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #fff;
+        color: #000;
+        border: none;
+        padding: 3px 10px;
+        border-radius: 25px;
+        cursor: pointer;
+      }
+
+      @media (max-width: 740px) {
         .navbar-links {
           display: none;
           flex-direction: column;
@@ -331,7 +362,7 @@
           top: 60px;
           right: 0;
           background-color: #222;
-          padding: 1rem 2rem;
+          padding: 2rem 2rem;
           border-radius: 5px;
         }
 
@@ -346,6 +377,7 @@
         .cards {
           flex-direction: column;
           gap: 1rem;
+          margin-left: 7%;
         }
       }
     </style>
@@ -421,27 +453,61 @@
       <section id="projects">
         <h2>My Projects</h2>
         <div class="gallery">
-          <div class="gallery-item"><img src="1.png" alt="Project 1" /></div>
           <div class="gallery-item">
-            <img src="SDG-pictures.png" alt="Project 2" />
+            <img src="1.png" alt="Project 1" onclick="openLightbox('1.png')" />
           </div>
           <div class="gallery-item">
-            <img src="download-2.png" alt="Project 3" />
+            <img
+              src="SDG-pictures.png"
+              alt="Project 2"
+              onclick="openLightbox('SDG-pictures.png')"
+            />
           </div>
           <div class="gallery-item">
-            <img src="Buy-your-snax.png" alt="Project 4" />
+            <img
+              src="download-2.png"
+              alt="Project 3"
+              onclick="openLightbox('download-2.png')"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="Buy-your-snax.png"
+              alt="Project 4"
+              onclick="openLightbox('Buy-your-snax.png')"
+            />
           </div>
           <div class="gallery-item">
             <img
               src="WhatsApp-Image-2024-07-25-at-6.42.33-PM-1.jpeg"
               alt="Project 5"
+              onclick="openLightbox('WhatsApp-Image-2024-07-25-at-6.42.33-PM-1.jpeg')"
             />
           </div>
           <div class="gallery-item">
-            <img src="8ji0pe5j-292x300.png" alt="Project 6" />
+            <img
+              src="8ji0pe5j-292x300.png"
+              alt="Project 6"
+              onclick="openLightbox('8ji0pe5j-292x300.png')"
+            />
           </div>
           <div class="gallery-item">
-            <img src="Add a subheading.png" alt="Project 7" />
+            <img
+              src="Add a subheading.png"
+              alt="Project 7"
+              onclick="openLightbox('Add a subheading.png')"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="WhatsApp Image 2024-10-10 at 14.38.44.jpeg"
+              alt="3d modeling"
+              onclick="openLightbox('WhatsApp Image 2024-10-10 at 14.38.44.jpeg')"
+            />
+          </div>
+          <div class="lightbox" id="lightbox">
+            <span class="close-button" onclick="closeLightbox()">X</span>
+            <img id="lightboxImage" src="" />
           </div>
         </div>
       </section>
@@ -468,6 +534,26 @@
     <script>
       function toggleMenu() {
         document.querySelector(".navbar-links").classList.toggle("active");
+      }
+      document.addEventListener("click", function (event) {
+        const navbarLinks = document.querySelector(".navbar-links");
+        const hamburger = document.querySelector(".hamburger");
+
+        if (
+          navbarLinks.classList.contains("active") &&
+          !event.target.closest(".navbar-links") &&
+          !event.target.closest(".hamburger")
+        ) {
+          navbarLinks.classList.remove("active");
+        }
+      });
+      function openLightbox(imageSrc) {
+        document.getElementById("lightbox").style.display = "flex";
+        document.getElementById("lightboxImage").src = imageSrc;
+      }
+
+      function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
       }
     </script>
   </body>
